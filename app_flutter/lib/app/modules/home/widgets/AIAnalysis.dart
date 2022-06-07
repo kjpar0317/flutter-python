@@ -111,8 +111,7 @@ class AIAnalysis extends GetView<AICoinController> {
                                                   controller
                                                       .botMap["ReasonFound"],
                                                   style: TextStyle(
-                                                      fontSize: ScreenUtil()
-                                                          .setSp(14)))))
+                                                      fontSize: 14.sp))))
                                     ],
                                   )
                                 ],
@@ -129,7 +128,7 @@ class AIAnalysis extends GetView<AICoinController> {
             style: TextStyle(
               color: Color(0xff7589a2),
               fontWeight: FontWeight.bold,
-              fontSize: ScreenUtil().setSp(14),
+              fontSize: 14.sp,
             )));
   }
 }

@@ -69,16 +69,13 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                                     Text(
                                                       item.symbol,
                                                       style: TextStyle(
-                                                          fontSize: ScreenUtil()
-                                                              .setSp(16)),
+                                                          fontSize: 16.sp),
                                                       textAlign:
                                                           TextAlign.center,
                                                     ),
                                                     Text(item.rank.toString(),
                                                         style: TextStyle(
-                                                            fontSize:
-                                                                ScreenUtil()
-                                                                    .setSp(14)),
+                                                            fontSize: 14.sp),
                                                         textAlign:
                                                             TextAlign.center)
                                                   ]),
@@ -94,14 +91,12 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                               children: [
                                                 Text(item.name,
                                                     style: TextStyle(
-                                                        fontSize: ScreenUtil()
-                                                            .setSp(14)),
+                                                        fontSize: 12.sp),
                                                     textAlign: TextAlign.left),
                                                 Text(
                                                     "가격: $price\n24시간 볼륨: $volume24h, 24시간변동: $priceChange24h\n7일간변동: $priceChange7d, 30일간변동: $priceChange30d",
                                                     style: TextStyle(
-                                                        fontSize: ScreenUtil()
-                                                            .setSp(12)),
+                                                        fontSize: 10.sp),
                                                     textAlign: TextAlign.left),
                                               ]),
                                         ])),
@@ -113,8 +108,7 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                                 color: item.status == 'active'
                                                     ? Colors.green[300]
                                                     : Colors.red[300],
-                                                fontSize:
-                                                    ScreenUtil().setSp(14)),
+                                                fontSize: 14.sp),
                                             textAlign: TextAlign.center)),
                                   ],
                                 ),

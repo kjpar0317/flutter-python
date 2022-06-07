@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
               title: "Application",
               initialRoute: AppPages.INITIAL,
               getPages: AppPages.routes,
-              builder: (context, widget) {
-                // ScreenUtil.init(context);
+              builder: (ctx, widget) {
+                // ScreenUtil.init(ctx);
 
                 return MediaQuery(
                   //Setting font does not change with system font size
-                  data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                  data: MediaQuery.of(ctx).copyWith(textScaleFactor: 0.8),
                   child: widget!,
                 );
               },

@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                 color: Get.isDarkMode
                     ? ThemeData.light().colorScheme.onPrimary
                     : ThemeData.dark().colorScheme.onPrimary,
-                fontSize: ScreenUtil().setSp(18)),
+                fontSize: 18.sp),
           ),
           actions: <Widget>[
             IconButton(

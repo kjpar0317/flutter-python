@@ -50,18 +50,18 @@ class _IconTextCardState extends State<IconTextCard> {
               StaggeredGridTile.count(
                   crossAxisCellCount: 3,
                   mainAxisCellCount: 1.2,
-                  child: Text(widget.topText,
-                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
+                  child:
+                      Text(widget.topText, style: TextStyle(fontSize: 12.sp))),
               StaggeredGridTile.count(
                   crossAxisCellCount: 4,
                   mainAxisCellCount: 2.3,
                   child: Text(widget.middleText,
-                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
+                      style: TextStyle(fontSize: 12.sp))),
               StaggeredGridTile.count(
                   crossAxisCellCount: 4,
                   mainAxisCellCount: 0.5,
                   child: Text(widget.bottomText,
-                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
+                      style: TextStyle(fontSize: 12.sp))),
             ],
           ),
         ));
