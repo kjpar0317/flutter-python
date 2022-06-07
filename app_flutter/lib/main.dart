@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (_) => GetMaterialApp(
+        builder: (BuildContext scontext, child) => GetMaterialApp(
               title: "Application",
               initialRoute: AppPages.INITIAL,
               getPages: AppPages.routes,
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
                   child: widget!,
                 );
               },
-              theme: getTheme(context, Get.isDarkMode),
-              darkTheme: getTheme(context, Get.isDarkMode),
+              theme: getTheme(scontext, Get.isDarkMode),
+              darkTheme: getTheme(scontext, Get.isDarkMode),
             ));
   }
 }
