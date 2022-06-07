@@ -91,12 +91,12 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                               children: [
                                                 Text(item.name,
                                                     style: TextStyle(
-                                                        fontSize: 12.sp),
+                                                        fontSize: 14.sp),
                                                     textAlign: TextAlign.left),
                                                 Text(
                                                     "가격: $price\n24시간 볼륨: $volume24h, 24시간변동: $priceChange24h\n7일간변동: $priceChange7d, 30일간변동: $priceChange30d",
                                                     style: TextStyle(
-                                                        fontSize: 10.sp),
+                                                        fontSize: 12.sp),
                                                     textAlign: TextAlign.left),
                                               ]),
                                         ])),
