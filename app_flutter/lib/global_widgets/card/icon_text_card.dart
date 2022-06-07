@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconTextCard extends StatefulWidget {
   const IconTextCard({
@@ -41,9 +41,7 @@ class _IconTextCardState extends State<IconTextCard> {
                   child: ListView(
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
-                    children: this
-                        .widget
-                        .icons!
+                    children: widget.icons!
                         .map((imgUrl) => !imgUrl.endsWith('svg')
                             ? Image.network(imgUrl, width: 25, height: 25)
                             : SvgPicture.network(imgUrl, width: 25, height: 25))
@@ -52,18 +50,18 @@ class _IconTextCardState extends State<IconTextCard> {
               StaggeredGridTile.count(
                   crossAxisCellCount: 3,
                   mainAxisCellCount: 1.2,
-                  child: Text(this.widget.topText,
-                      style: TextStyle(fontSize: 14.sp))),
+                  child: Text(widget.topText,
+                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
               StaggeredGridTile.count(
                   crossAxisCellCount: 4,
                   mainAxisCellCount: 2.3,
-                  child: Text(this.widget.middleText,
-                      style: TextStyle(fontSize: 14.sp))),
+                  child: Text(widget.middleText,
+                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
               StaggeredGridTile.count(
                   crossAxisCellCount: 4,
                   mainAxisCellCount: 0.5,
-                  child: Text(this.widget.bottomText,
-                      style: TextStyle(fontSize: 12.sp))),
+                  child: Text(widget.bottomText,
+                      style: TextStyle(fontSize: ScreenUtil().setSp(14)))),
             ],
           ),
         ));

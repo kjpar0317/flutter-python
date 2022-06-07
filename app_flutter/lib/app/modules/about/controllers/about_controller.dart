@@ -12,10 +12,6 @@ class AboutController extends GetxController {
     _isLoading.value = false;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}

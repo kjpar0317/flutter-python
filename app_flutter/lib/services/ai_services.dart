@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:universal_platform/universal_platform.dart';
 
-import 'package:app_flutter/models/coin_schedule.dart';
 
 class AIServices {
   static var client = http.Client();

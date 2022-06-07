@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:app_flutter/global_widgets/common/loading.dart';
 import 'package:app_flutter/models/coin_trend.dart';
@@ -53,7 +53,7 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                         mainAxisCellCount: 1,
                                         child: Container(
                                             padding: const EdgeInsets.symmetric(
-                                                vertical: 5, horizontal: 5),
+                                                vertical: 5, horizontal: 15),
                                             color: item.priceChange[
                                                             "priceChange7d"]!
                                                         .toDouble() >=
@@ -61,66 +61,49 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                                 ? Colors.green[300]
                                                 : Colors.red[300],
                                             child: Row(children: [
-                                              Padding(
-                                                padding: EdgeInsets.fromLTRB(
-                                                    5, 5, 5, 5),
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        item.symbol,
+                                              Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      item.symbol,
+                                                      style: TextStyle(
+                                                          fontSize: ScreenUtil()
+                                                              .setSp(16)),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                    Text(item.rank.toString(),
                                                         style: TextStyle(
-                                                            fontSize: 15.sp),
+                                                            fontSize:
+                                                                ScreenUtil()
+                                                                    .setSp(14)),
                                                         textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                      Text(item.rank.toString(),
-                                                          style: TextStyle(
-                                                              fontSize: 14.sp),
-                                                          textAlign:
-                                                              TextAlign.center)
-                                                    ]),
-                                              )
+                                                            TextAlign.center)
+                                                  ]),
                                             ]))),
                                     StaggeredGridTile.count(
                                         crossAxisCellCount: 4,
                                         mainAxisCellCount: 1,
                                         child: Row(children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                            child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                      item.name +
-                                                          " - 24시간 볼륨: $volume24h",
-                                                      style: TextStyle(
-                                                          fontSize: 12.sp),
-                                                      textAlign:
-                                                          TextAlign.left),
-                                                  Text(
-                                                      "가격: $price, 24시간변동: $priceChange24h",
-                                                      style: TextStyle(
-                                                          fontSize: 12.sp),
-                                                      textAlign:
-                                                          TextAlign.left),
-                                                  Text(
-                                                      "7일간변동: $priceChange7d, 30일간변동: $priceChange30d",
-                                                      style: TextStyle(
-                                                          fontSize: 12.sp),
-                                                      textAlign:
-                                                          TextAlign.left),
-                                                ]),
-                                          )
+                                          Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(item.name,
+                                                    style: TextStyle(
+                                                        fontSize: ScreenUtil()
+                                                            .setSp(14)),
+                                                    textAlign: TextAlign.left),
+                                                Text(
+                                                    "가격: $price\n24시간 볼륨: $volume24h, 24시간변동: $priceChange24h\n7일간변동: $priceChange7d, 30일간변동: $priceChange30d",
+                                                    style: TextStyle(
+                                                        fontSize: ScreenUtil()
+                                                            .setSp(12)),
+                                                    textAlign: TextAlign.left),
+                                              ]),
                                         ])),
                                     StaggeredGridTile.count(
                                         crossAxisCellCount: 1,
@@ -130,7 +113,8 @@ class CoinTrends extends GetView<CoinTrendsController> {
                                                 color: item.status == 'active'
                                                     ? Colors.green[300]
                                                     : Colors.red[300],
-                                                fontSize: 14.sp),
+                                                fontSize:
+                                                    ScreenUtil().setSp(14)),
                                             textAlign: TextAlign.center)),
                                   ],
                                 ),

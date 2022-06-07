@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:get/get.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:app_flutter/app/modules/home/controllers/home_controller.dart';
 import 'package:app_flutter/app/modules/home/widgets/Dashboard.dart';
@@ -27,7 +27,11 @@ class HomeView extends GetView<HomeController> {
               : SystemUiOverlayStyle.dark,
           title: Text(
             'COININFOS',
-            style: TextStyle(fontSize: 18.sp),
+            style: TextStyle(
+                color: Get.isDarkMode
+                    ? ThemeData.light().colorScheme.onPrimary
+                    : ThemeData.dark().colorScheme.onPrimary,
+                fontSize: ScreenUtil().setSp(18)),
           ),
           actions: <Widget>[
             IconButton(
@@ -39,15 +43,13 @@ class HomeView extends GetView<HomeController> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.login),
-              tooltip: '로그인',
-              onPressed: () => Get.toNamed('/about')
-            ),
+                icon: Icon(Icons.login),
+                tooltip: '로그인',
+                onPressed: () => Get.toNamed('/about')),
             IconButton(
-              icon: Icon(Icons.app_registration),
-              tooltip: '회원가입',
-              onPressed: () => Get.toNamed('/about')
-            )
+                icon: Icon(Icons.app_registration),
+                tooltip: '회원가입',
+                onPressed: () => Get.toNamed('/about'))
           ],
         ),
         body: Obx(() => IndexedStack(

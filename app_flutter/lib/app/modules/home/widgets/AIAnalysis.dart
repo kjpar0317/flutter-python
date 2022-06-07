@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:app_flutter/app/modules/home/controllers/aicoin_controller.dart';
 
@@ -38,7 +38,7 @@ class AIAnalysis extends GetView<AICoinController> {
                                 ]))),
                   ),
                   Flexible(
-                    flex: 3,
+                    flex: 4,
                     fit: FlexFit.tight,
                     child: Card(
                         child: Padding(
@@ -80,7 +80,7 @@ class AIAnalysis extends GetView<AICoinController> {
                             barGroups: controller.list2)),
                       ))),
                   Flexible(
-                      flex: 4,
+                      flex: 3,
                       fit: FlexFit.tight,
                       child: Card(
                           child: Padding(
@@ -111,7 +111,8 @@ class AIAnalysis extends GetView<AICoinController> {
                                                   controller
                                                       .botMap["ReasonFound"],
                                                   style: TextStyle(
-                                                      fontSize: 14.sp))))
+                                                      fontSize: ScreenUtil()
+                                                          .setSp(14)))))
                                     ],
                                   )
                                 ],
@@ -128,7 +129,7 @@ class AIAnalysis extends GetView<AICoinController> {
             style: TextStyle(
               color: Color(0xff7589a2),
               fontWeight: FontWeight.bold,
-              fontSize: 14.sp,
+              fontSize: ScreenUtil().setSp(14),
             )));
   }
 }
